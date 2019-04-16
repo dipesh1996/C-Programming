@@ -1,0 +1,22 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+  
+int highestPowerof2(int n) 
+{ 
+    int res=2;
+    if(res > n)
+        return res/2;
+    else
+    {
+        res *= highestPowerof2(n/2);
+        return res;
+    }
+} 
+  
+// Driver code 
+int main() 
+{ 
+    int n = 12; 
+    cout << highestPowerof2(n); 
+    return 0; 
+} 
